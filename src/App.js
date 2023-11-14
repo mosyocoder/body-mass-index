@@ -1,15 +1,20 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-import CalculateBMI from "./components/CalculateBMI"
+import NavBar from "./components/NavBar";
+import CalculateBMI from "./components/CalculateBMI";
+import WhatIsBMI from "./components/WhatIsBMI";
+import "./App.css";
 
 function App() {
-  return (
-    <div>
-      <Routes>
-        <Route path={'/'} element={<CalculateBMI />}></Route>
-      </Routes>
-    </div>
-  );
+	return (
+		<div>
+			<NavBar />
+			<Routes>
+				<Route path={"/"} element={<CalculateBMI />}></Route>
+				<Route path={"/whatis"} element={<WhatIsBMI />}></Route>
+			</Routes>
+		</div>
+	);
 }
 
 export default App;
