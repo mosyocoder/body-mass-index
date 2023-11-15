@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LeftContainer, Logo, NavbarContainer, NavbarExtendedContainer, NavbarInnerContainer, NavbarLink, NavbarLinkContainer, NavbarLinkExtended, OpenLinkButton, RightContainer } from "../../styles/Navbar.style";
 
-import LogoImg from "../../assets/logo.png";
+	import LogoImg from "../../assets/logo.png";
 
 function NavBar() {
 	const [extendNavbar, setExtendNavbar] = useState(false);
@@ -23,9 +23,9 @@ function NavBar() {
 			</NavbarInnerContainer>
 			{extendNavbar && (
 				<NavbarExtendedContainer>
-					<NavbarLinkExtended to={"/"}>Calculate</NavbarLinkExtended>
-					<NavbarLinkExtended to={"/whatis"}>What is BMI ?</NavbarLinkExtended>
-					<NavbarLinkExtended to={"/whatis"}>Recent Calculates</NavbarLinkExtended>
+					<NavbarLinkExtended onClick={()=>setExtendNavbar(false)} to={"/"}>Calculate</NavbarLinkExtended>
+					<NavbarLinkExtended onClick={()=>setExtendNavbar(false)} to={"/whatis"}>What is BMI ?</NavbarLinkExtended>
+					<NavbarLinkExtended onClick={()=>setExtendNavbar(false)} to={"/whatis"}>Recent Calculates</NavbarLinkExtended>
 				</NavbarExtendedContainer>
 			)}
 		</NavbarContainer>
