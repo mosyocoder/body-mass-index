@@ -1,7 +1,8 @@
 import React from "react";
 
+
 function WhatIsBMI() {
-	return <div>WhatIsBMI</div>;
+	return <div>Whatisbmi</div>;
 }
 
 export default WhatIsBMI;

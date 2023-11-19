@@ -7,7 +7,7 @@ function NavBar() {
 	const [extendNavbar, setExtendNavbar] = useState(false);
 
 	return (
-		<NavbarContainer extendNavbar={extendNavbar}>
+		<NavbarContainer extendnavbar={!extendNavbar ? "false" : extendNavbar}>
 			<NavbarInnerContainer>
 				<LeftContainer>
 					<NavbarLinkContainer>
@@ -23,9 +23,15 @@ function NavBar() {
 			</NavbarInnerContainer>
 			{extendNavbar && (
 				<NavbarExtendedContainer>
-					<NavbarLinkExtended onClick={()=>setExtendNavbar(false)} to={"/"}>Calculate</NavbarLinkExtended>
-					<NavbarLinkExtended onClick={()=>setExtendNavbar(false)} to={"/whatis"}>What is BMI ?</NavbarLinkExtended>
-					<NavbarLinkExtended onClick={()=>setExtendNavbar(false)} to={"/whatis"}>Recent Calculates</NavbarLinkExtended>
+					<NavbarLinkExtended onClick={() => setExtendNavbar(false)} to={"/"}>
+						Calculate
+					</NavbarLinkExtended>
+					<NavbarLinkExtended onClick={() => setExtendNavbar(false)} to={"/whatis"}>
+						What is BMI ?
+					</NavbarLinkExtended>
+					<NavbarLinkExtended onClick={() => setExtendNavbar(false)} to={"/whatis"}>
+						Recent Calculates
+					</NavbarLinkExtended>
 				</NavbarExtendedContainer>
 			)}
 		</NavbarContainer>
