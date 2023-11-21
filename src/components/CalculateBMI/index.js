@@ -17,8 +17,15 @@ function CalculateBMI() {
 				weight,
 				height,
 				gender,
+				date: Date.now(),
 			};
-			console.log(data);
+			const oldData = JSON.parse(localStorage.getItem("bmi"));
+			if (!oldData) {
+				localStorage.setItem("bmi", JSON.stringify([data]));
+			} else {
+				oldData.push(data);
+				localStorage.setItem("bmi", JSON.stringify(oldData));
+			}
 		} else alert("Please fill all fields");
 	};
 
@@ -26,15 +33,15 @@ function CalculateBMI() {
 		<CalculateContainer>
 			<FormDiv>
 				<Input onChange={(e) => setName(e.target.value)} placeholder="Enter your name..." />
-				<Input onChange={(e) => setWeight(e.target.value)} placeholder="Enter your weight... (68 etc.)" />
-				<Input onChange={(e) => setHeight(e.target.value)} placeholder="Enter your height... (1.75 etc.)" />
+				<Input type="number" onChange={(e) => setWeight(e.target.value)} placeholder="Enter your weight... (68 etc.)" />
+				<Input type="number" onChange={(e) => setHeight(e.target.value)} placeholder="Enter your height... (1.75 etc.)" />
 			</FormDiv>
 			<RadioButtonDiv>
-				<div>
+				<div style={{ display: "flex", alignItems: "center" }}>
 					<RadioButton value="male" onChange={(e) => setGender(e.target.value)} name="gender" id="radioButMale" />
 					<Label htmlFor="radioButMale">Male</Label>
 				</div>
-				<div>
+				<div style={{ display: "flex", alignItems: "center" }}>
 					<RadioButton value="famale" onChange={(e) => setGender(e.target.value)} name="gender" id="radioButFamale" />
 					<Label htmlFor="radioButFamale">Famale</Label>
 				</div>

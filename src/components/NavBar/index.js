@@ -3,17 +3,17 @@ import { LeftContainer, Logo, NavbarContainer, NavbarExtendedContainer, NavbarIn
 
 	import LogoImg from "../../assets/logo.png";
 
-function NavBar() {
+function NavBar(props) {
 	const [extendNavbar, setExtendNavbar] = useState(false);
 
 	return (
-		<NavbarContainer extendnavbar={!extendNavbar ? "false" : extendNavbar}>
+		<NavbarContainer $extendNavbar={extendNavbar}>
 			<NavbarInnerContainer>
 				<LeftContainer>
 					<NavbarLinkContainer>
 						<NavbarLink to={"/"}>Calculate</NavbarLink>
 						<NavbarLink to={"/whatis"}>What is BMI ?</NavbarLink>
-						<NavbarLink to={"/whatis"}>Recent Calculates</NavbarLink>
+						<NavbarLink to={"/recent"}>Recent Calculates</NavbarLink>
 						<OpenLinkButton onClick={() => setExtendNavbar((curr) => !curr)}>{extendNavbar ? <>&#10005;</> : <>&#8801;</>}</OpenLinkButton>
 					</NavbarLinkContainer>
 				</LeftContainer>
@@ -29,7 +29,7 @@ function NavBar() {
 					<NavbarLinkExtended onClick={() => setExtendNavbar(false)} to={"/whatis"}>
 						What is BMI ?
 					</NavbarLinkExtended>
-					<NavbarLinkExtended onClick={() => setExtendNavbar(false)} to={"/whatis"}>
+					<NavbarLinkExtended onClick={() => setExtendNavbar(false)} to={"/recent"}>
 						Recent Calculates
 					</NavbarLinkExtended>
 				</NavbarExtendedContainer>

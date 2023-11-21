@@ -30,7 +30,7 @@ export const FormDiv = styled.div`
 	justify-content: center;
 `;
 
-export const Input = styled.input.attrs({ type: "text" })`
+export const Input = styled.input`
 	border: none;
 	border-bottom: 0.5px solid darkgray;
 	border-radius: 0;
