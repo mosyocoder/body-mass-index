@@ -1,23 +1,28 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import {useNavigate} from "react-router-dom";
+import { nanoid } from "nanoid";
 
 import { CalculateContainer, RadioButtonDiv, RadioButton, Label, FormDiv, Input, CalculateButton } from "../../styles/CalculateBMI.style";
-import { nanoid } from "nanoid";
 
 function CalculateBMI() {
 	const [name, setName] = useState("");
 	const [weight, setWeight] = useState("");
 	const [height, setHeight] = useState("");
 	const [gender, setGender] = useState("");
+	
+	const navigate = useNavigate();
 
 	const calculate = () => {
 		if (name && weight && height && gender) {
+			const d = new Date();
+			const date = d.toDateString();
 			const data = {
 				id: nanoid(10),
 				name,
 				weight,
 				height,
 				gender,
-				date: Date.now(),
+				date,
 			};
 			const oldData = JSON.parse(localStorage.getItem("bmi"));
 			if (!oldData) {
@@ -26,6 +31,7 @@ function CalculateBMI() {
 				oldData.push(data);
 				localStorage.setItem("bmi", JSON.stringify(oldData));
 			}
+			navigate('/recent');
 		} else alert("Please fill all fields");
 	};
 
