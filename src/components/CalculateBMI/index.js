@@ -14,10 +14,14 @@ function CalculateBMI() {
 
 	const calculate = () => {
 		if (name && weight && height && gender) {
+
 			const d = new Date();
 			const date = d.toDateString();
+
+            const id = nanoid(10);
+
 			const data = {
-				id: nanoid(10),
+				id,
 				name,
 				weight,
 				height,
@@ -31,7 +35,7 @@ function CalculateBMI() {
 				oldData.push(data);
 				localStorage.setItem("bmi", JSON.stringify(oldData));
 			}
-			navigate('/recent');
+			navigate(`/recent/${id}`);
 		} else alert("Please fill all fields");
 	};
 

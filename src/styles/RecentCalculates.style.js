@@ -6,11 +6,43 @@ export const RecentContainer = styled.div`
   overflow-x: auto;
 `;
 
+export const ResultDetailDiv = styled.div`
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	@media (max-width: 700px) {
+		font-size: 10px;
+	}
+
+	@media (min-width: 850px) {
+		justify-content: space-evenly;
+	}
+`;
+
+export const ColorDiv = styled.div`
+	width: 40px;
+	height: 40px;
+	background-color: ${(props) => (props.$bgc === "blue" ? "blue" : props.$bgc === "green" ? "green" : props.$bgc === "yellow" ? "yellow" : props.$bgc === "orange" ? "orange" : "red")};
+
+	@media (min-width: 850px) {
+		width: 50px;
+		height: 50px;
+	}
+
+	@media (max-width: 700px) {
+		width: 20px;
+		height: 20px;
+	}
+`;
+
 export const RecentTable = styled.table`
-  border-radius: 5px;
-  width: 100%;
-  border-collapse: collapse;
-  borde-spacing: 0;
+	border-radius: 5px;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-top: 25px;
 `;
 
 export const RecentTableTR = styled.tr`

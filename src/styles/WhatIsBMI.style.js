@@ -10,6 +10,7 @@ export const BMIContainer = styled.div`
 	flex-direction: column;
 	border-left: 1px solid rgba(0, 0, 0, 0.4);
 	border-right: 1px solid rgba(0, 0, 0, 0.4);
+	background-color: #fafafa;
 
 	@media (max-width: 700px) {
 		max-width: 600px;

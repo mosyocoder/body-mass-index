@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 
-import NavBar from "./components/NavBar";
-import CalculateBMI from "./components/CalculateBMI";
-import WhatIsBMI from "./components/WhatIsBMI";
 import "./App.css";
+import NavBar from "./components/NavBar";
+import WhatIsBMI from "./components/WhatIsBMI";
+import CalculateBMI from "./components/CalculateBMI";
+import CalculatesDetail from "./components/CalculatesDetail";
 import RecentCalculates from "./components/RecentCalculates";
 
 function App() {
@@ -11,9 +12,10 @@ function App() {
 		<div>
 			<NavBar />
 			<Routes>
-				<Route path={"/"} element={<CalculateBMI />}></Route>
-				<Route path={"/whatis"} element={<WhatIsBMI />}></Route>
-				<Route path={"/recent"} element={<RecentCalculates />}></Route>
+				<Route path={"/"} element={<CalculateBMI />} />
+				<Route path={"/whatis"} element={<WhatIsBMI />} />
+				<Route path={"/recent"} element={<RecentCalculates />} />
+				<Route path={"/recent/:id"} element={<CalculatesDetail />} />
 			</Routes>
 		</div>
 	);
