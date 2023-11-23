@@ -16,7 +16,7 @@ function CalculateBMI() {
 		if (name && weight && height && gender) {
 
 			const d = new Date();
-			const date = d.toDateString();
+			const date = d.toUTCString();
 
             const id = nanoid(10);
 

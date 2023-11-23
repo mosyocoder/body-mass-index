@@ -13,6 +13,23 @@ export const DetailContainer = styled.div`
 	}
 `;
 
-export const DetailTop = styled.div``;
+export const DetailTop = styled.div`
+	display: flex;
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+`;
 
-export const DetailBottom = styled.div``;
+export const Details = styled.div`
+	margin-left: 50px;
+`;
+
+export const DetailBottom = styled.div`
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	width: 90%;
+	margin: 0 auto;
+`;
