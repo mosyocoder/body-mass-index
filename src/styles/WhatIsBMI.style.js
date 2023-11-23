@@ -13,7 +13,7 @@ export const BMIContainer = styled.div`
 	background-color: #fafafa;
 
 	@media (max-width: 700px) {
-		max-width: 600px;
+		max-width: 90%;
 	}
 `;
 
